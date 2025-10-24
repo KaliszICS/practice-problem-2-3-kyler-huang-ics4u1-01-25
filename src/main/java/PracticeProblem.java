@@ -1,12 +1,32 @@
 public class PracticeProblem {
 
-	public static void main(String args[]) {
+    public static void main(String args[]) {
+        String[] array_ = {"apple", "violin", "egg", "pear", "water", "melon", "brick", "zoo"};
+        bubbleSortString(array_);
+        for (int i = 0; i < array_.length; i++) {
+            System.out.println(array_[i]);
+        }
+    }
 
-	}
+    public static void bubbleSortString(String[] strings) {
+        for (int i = 0; i < strings.length - 1; i++) {
 
-	public static void q1() {
-		//Write question 1 code here
-	}
+            boolean swapped = false;
+            for (int j = 0; j < strings.length - i - 1; j++) {
+
+                if (strings[j].compareToIgnoreCase(strings[j + 1]) > 0) {
+                    String temp = strings[j];
+                    strings[j] = strings[j + 1];
+                    strings[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+    }
+
 
 	public static void q2() {
 		//Write question 2 code here
